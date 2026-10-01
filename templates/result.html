@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Emotion Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">🧠</div>
+
+    <h1>Emotion Analysis</h1>
+
+    <p class="subtitle">
+        Your speech has been analyzed by our AI model
+    </p>
+
+    <div class="card result-card">
+
+        <div class="result-icon">
+            🎭
+        </div>
+
+        <p class="result-label">
+            DETECTED EMOTION
+        </p>
+
+        <h2 class="emotion">
+            {{ emotion | title }}
+        </h2>
+
+        <div class="confidence-section">
+
+            <div class="confidence-header">
+
+                <span>Confidence</span>
+
+                <span>
+                    {{ confidence }}%
+                </span>
+
+            </div>
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    style="width: {{ confidence }}%;">
+                </div>
+
+            </div>
+
+        </div>
+
+        <a href="/" class="again-button">
+            Analyze Another Audio
+        </a>
+
+    </div>
+
+    <div class="footer">
+        Speech Emotion Recognition using Machine Learning
+    </div>
+
+</div>
+
+</body>
+
+</html>
